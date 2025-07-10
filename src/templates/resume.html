@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %} Resume {% endblock %}
+{% block content %}
+<div class ="content resume-content">
+    <object data = "{{ url_for('static', filename='Resume.pdf')}}" alt = "Resume" class = "pdf"></object>
+</div>
+{% endblock %}

@@ -1,0 +1,365 @@
+
+* {
+    padding:0;
+    margin: 0;
+}
+
+body {
+    background: #f0ece6;
+}
+
+
+h1 {
+    font-family: Palatino Linotype , Helvetica, Arial, sans-serif;
+}
+
+p {
+
+    font-family: "Palatino Linotype", Helvetica, Arial, sans-serif;
+    font-size: 1.35em;
+}
+
+/*
+.content {
+    
+    margin-left: 75px;
+    margin-right: 75px;
+    border-radius:10px;
+    padding: 25px;
+    
+    
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+    background: #dfd4bf;
+    
+}
+*/
+
+/*
+.content h1 {
+    font-size: 5em;
+}
+
+.content p {
+    margin-top: 1.5em;
+}
+*/
+.about-box{
+    /*
+    background: #dfd4bf;
+    padding: 25px 75px;
+     maybe change this margin if adding background boxes for text
+    margin-bottom: 250px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08)
+    */
+    flex: 1 1 60%;
+    max-width: 60%;
+    background: #dfd4bf;
+    border-radius: 10px;
+    padding: 25px 75px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-flex {
+    display: flex;
+    /*align-items: center*/
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    /*new */
+    margin-bottom: 100px;
+}
+
+.about-text{
+    /*
+    flex: 1 1 60%;
+    max-width: 60%;
+    */
+    flex: 1 1 90%;
+    max-width: 100%;
+    margin-right:auto;
+    justify-content: center;
+}
+
+.about-text h2{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 2em;
+    margin-bottom: 0.4em;
+}
+
+.about-text p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0.75em;
+    margin-bottom: 4em;
+}
+
+.about-photo{
+    flex: 1 1 0;
+    max-width: 33%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    /*margin: 0;*/
+    margin-right: 75px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    /* new */
+    align-self: flex-start;
+}
+
+.about-description{
+    justify-content: center;
+    margin-right: 75px;
+    margin-left: 75px;
+    text-align: center;
+}
+
+.work-container {
+    display: flex;
+    margin-left: 75px;
+    margin-right: 75px;
+    flex-direction: column;
+}
+
+.work-beginning-text {
+    justify-content: center;
+    flex: 1 1 0;
+    max-width: 50%;
+    height: auto;
+    font-family: Palatino Linotype , sans-serif;
+    margin-bottom: 100px;
+}
+
+.work-content-module::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    
+    border-radius: 2px;
+    
+    margin-bottom: 0.9em;
+    margin-top: 0.6em;
+
+}
+
+.work-content-module {
+    position: relative; 
+    display: flex; 
+    flex-direction:column;
+    gap: 1em;
+    margin-bottom: 60px;
+    
+    font-size: 0.9em;
+    /*
+    align-items: flex-start;
+    justify-content: space-between;
+    justify-content: center; 
+    */
+}
+
+.work-content-module a {
+    display: inline-block; /* or block */
+    flex: none; /* prevent flex shrinking */
+}
+
+.work-content-module a img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.text-row {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.date{
+    margin-right: 40px;
+    color: grey;
+}
+
+.name{
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.description{
+    flex: 1 1 0;
+    max-width: 30%;
+    margin-right: 6em;
+}
+
+.skills {
+    text-align: right;
+    color: grey;
+}
+
+.work-module-image {
+    flex: 1 1 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* For Resume Page */
+.resume-content{
+    height: 80vh;
+    min-height: 0;
+    max-height: 100vh;
+    padding: 0;
+}
+
+.pdf{
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    width: calc(100% - 150px);
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+/* Nav, Footer, and Scripts */
+nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    position: relative;
+}
+
+nav a,
+nav a:visited{
+    color: black;
+}
+
+nav a.active {
+    position: relative;
+    font-weight: bold;
+    color: #333;
+}
+
+nav a.active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+}
+
+nav a:nth-child(2){
+    margin-left: 10px;
+    font-size: 1.4em;
+    margin-right: auto;
+}
+
+nav a:last-child{
+    margin-right: 75px;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 1.25em;
+    margin-left: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.nav-image{
+    margin-left: 75px;
+    max-width: 60px;
+    height: auto;
+}
+
+footer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 60px;
+    align-items: center;
+    display:flex;
+    justify-content: right;
+}
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: right;
+}
+
+.footer-links li:last-child .footer-image{
+    margin-right: 75px;
+}
+
+.footer-image{ /* use a dot before footer image to target a class i guess */
+    height: 2.5em;
+    margin: 15px;
+    margin-left: auto;
+}
+
+.fade-in-on-load,
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 2s ease, transform 2s cubic-bezier(0.22,1,0.36,1);
+}
+
+.fade-in-on-load.visible,
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js-hide {
+    visibility: hidden;
+}
+
+/*
+Hide all nav links except name link
+Shrink margins for .content and nav
+Hide all footer icons except last one on small screens
+*/
+@media (max-width: 800px) {
+    nav a:not(:first-child) {
+        display: none;
+    }
+    .content {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    nav a:first-child {
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+    nav {
+        min-height: 40px;
+    }
+    .footer-links li:not(:last-child) {
+        display: none;
+    }
+    .footer-links li:last-child .footer-image {
+        margin-right: 10px;
+    }
+}

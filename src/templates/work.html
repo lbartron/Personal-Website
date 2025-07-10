@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %} Work {% endblock %}
+{% block content %}
+<div class = "work-container">
+    <div class = "work-beginning-text fade-in-on-scroll" data-delay = "0">
+        <h1>
+            I'm Leo, a Computer Science and Software Engineering Student
+            passionate about learning and creating projects with wide impact
+        </h1>
+    </div>
+
+    <p class = "fade-in-on-scroll" data-delay = "500">Current work</p>
+    
+    <div class = "work-content-module fade-in-on-scroll" data-delay = "500">
+        <div class = "text-row">
+            <p class = "date">2024</p>
+            <p class = "name">NAME</p>
+            <p class = "description">A short description about this project. It may take up two lines</p>
+            <p class = "skills">UI, Algorithms, Research</p>
+        </div>
+        <a href = https://github.com/lbartron title = "TEST">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image">
+        </a>
+    </div>
+
+    <div class = "work-content-module fade-in-on-scroll" data-delay = "0">
+        <div class = "text-row">
+            <p class = "date">2024</p>
+            <p class = "name">NAME</p>
+            <p class = "description">A short description about this project. It may take up two lines</p>
+            <p class = "skills">UI, Algorithms, Research</p>
+        </div>
+        <a href = https://github.com/lbartron title = "TEST">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image">
+        </a>
+    </div>
+
+    <div class = "work-content-module fade-in-on-scroll" data-delay = "0">
+        <div class = "text-row">
+            <p class = "date">2024</p>
+            <p class = "name">NAME</p>
+            <p class = "description">A short description about this project. It may take up two lines</p>
+            <p class = "skills">UI, Algorithms, Research</p>
+        </div>
+        <a href = https://github.com/lbartron title = "TEST">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image">
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    function revealOnScroll() {
+        document.querySelectorAll('.fade-in-on-scroll').forEach(function(el) {
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 50){
+                const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
+                setTimeout(function() {
+                    el.classList.add('visible');
+                }, delay);   
+            }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+});
+</script>
+{% endblock %}

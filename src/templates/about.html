@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %} About {% endblock %}
+{% block content %}
+<div class = "about-flex">
+    <div class = "about-box">
+        <div class = "about-text fade-in-on-scroll" >
+            <h2 id = "fade-header">
+                About me
+            </h2>
+            <p>
+                I'm Leo, a Computer Science and Software Engineering student at the University
+                Of Washington Bothell. 
+            </p>
+
+            <h2>
+                My skills
+            </h2>
+            <p>
+                HTML CSS C++ DATA STRUCTURES
+            </p>
+        </div>
+    </div>
+    <img src="{{ url_for('static', filename='img/AboutMeImage.jpg')}}" alt ="Your Name" class = "about-photo fade-in-on-scroll" data-delay = "300">
+</div>
+<!--
+<div class = "about-description">
+    
+</div>
+-->
+{% endblock %}
+{% block scripts %}
+<script>
+/*
+document.addEventListener("DOMContentLoaded", function(){
+    const el = document.getElementById("typewriter-text");
+    const text = el.textContent;
+    el.textContent = "";
+    let i = 0;
+    function typeWriter(){
+        if(i < text.length){
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 15);
+        }
+    }
+    typeWriter();
+});
+*/
+document.addEventListener("DOMContentLoaded",function(){
+
+    function revealOnScroll() {
+        document.querySelectorAll('.fade-in-on-scroll').forEach(function(el) {
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 50){
+                const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
+                setTimeout(function() {
+                    el.classList.add('visible');
+                }, delay);   
+            }
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+});
+</script>
+{% endblock %}
+<!--
+<p>
+        I am currently a student at the University of Washington Bothell studying
+        Computer Science and Software Engineering. I also work at the UWB campus library
+        as a Student Technology Consultant!
+
+
+        I am currently a student at the University of Washington Bothell studying
+        Computer Science and Software Engineering. I also work on campus as a Student Technology Consultant!
+    </p>
+    <p>
+        I am currently a student at the University of Washington Bothell studying
+        Computer Science and Software Engineering.
+    </p>
+-->
+<!--
+    setTimeout(function() {
+        // Fade in header
+        document.getElementById("fade-header").classList.remove("js-hide");
+        document.getElementById("fade-header").classList.add("visible");
+
+        // Fade in image (wait for it to load)
+        var img = document.querySelector('.about-photo.fade-in-on-load');
+        if (img.complete) {
+            img.classList.remove("js-hide");
+            img.classList.add("visible");
+        } else {
+            img.addEventListener('load', function() {
+                img.classList.remove("js-hide");
+                img.classList.add("visible");
+            });
+        }
+    }, 0);//in milliseconds
+-->
