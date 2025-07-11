@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #f0ece6;
+    background: #faf9f6;
 }
 
 
@@ -100,7 +100,11 @@ p {
 .about-text p{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-top: 0.75em;
-    margin-bottom: 4em;
+    margin-bottom: 1.5em;
+}
+
+.about-text p:last-child{
+    margin-bottom: 0;
 }
 
 .about-photo{
