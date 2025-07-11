@@ -11,7 +11,7 @@
     </div>
 
     <p class = "fade-in-on-scroll" data-delay = "500">Current work</p>
-    
+
     <div class = "work-content-module fade-in-on-scroll" data-delay = "500">
         <div class = "text-row">
             <p class = "date">2024</p>
@@ -20,7 +20,7 @@
             <p class = "skills">UI, Algorithms, Research</p>
         </div>
         <a href = https://github.com/lbartron title = "TEST">
-            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image grey-image">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" loading= "lazy" alt="Test Image" class="work-module-image grey-image">
         </a>
     </div>
 
@@ -32,7 +32,7 @@
             <p class = "skills">UI, Algorithms, Research</p>
         </div>
         <a href = https://github.com/lbartron title = "TEST">
-            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" loading = "lazy" alt="Test Image" class="work-module-image">
         </a>
     </div>
 
@@ -44,28 +44,12 @@
             <p class = "skills">UI, Algorithms, Research</p>
         </div>
         <a href = https://github.com/lbartron title = "TEST">
-            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" alt="Test Image" class="work-module-image">
+            <img src= "{{url_for('static', filename ='img/Leo_Bartron.png')}}" loading = "lazy" alt="Test Image" class="work-module-image">
         </a>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-    function revealOnScroll() {
-        document.querySelectorAll('.fade-in-on-scroll').forEach(function(el) {
-            const rect = el.getBoundingClientRect();
-            if(rect.top < window.innerHeight - 50){
-                const delay = el.dataset.delay ? parseInt(el.dataset.delay) : 0;
-                setTimeout(function() {
-                    el.classList.add('visible');
-                }, delay);   
-            }
-    });
-}
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
-});
-</script>
+<script src = "{{ url_for('static', filename ='js/scroll.js')}}" defer></script>
 {% endblock %}
